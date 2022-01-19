@@ -1,3 +1,16 @@
-h1{
-    color: blue;
+@import "reset.css";
+
+/* 배경 이미지 */
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    right: 0px;
+    bottom: 0px;
+    opacity: .8;
 }
+
