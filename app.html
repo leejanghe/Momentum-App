@@ -11,6 +11,7 @@
     <script defer src="/js/changeBG.js"></script>
     <script defer src="js/weather.js"></script>
     <script defer src="js/quote.js"></script>
+    <script defer src="js/todolist.js"></script>
 </head>
 <body>
     <img src="https:/placeimg.com/640/480/nature" class="img"/>
@@ -19,6 +20,10 @@
         <div class="header_changeBG">
             <p>change <br />background</p>
         </div>
+        <div class="header_todo">
+            <p>show <br />todo list</p>
+        </div>
+        <div class="blank"></div>
         <div class="header_weather">
             <div id="location"></div>
             <div id="temperature"></div>
@@ -39,6 +44,27 @@
         </div>
     </div>
     <h1 id="greeting" class="hide"></h1>
+
+    <main class="hide">
+        <div class="main_todo">
+            <div class="main_title">
+                <h1>To-Do List</h1>
+            </div>
+            <div class="main_todo_form">
+                <form id="todo-form">
+                    <input type="text" placeholder="write your task">
+                    <button>Add</button>
+                </form>
+            </div>
+            <div class="main_todo_list">
+                <ul id="todo-list">
+                </ul>
+            </div>
+        </div>
+
+        
+    </main>
+
 
     <footer>
         <div id='quote'>
