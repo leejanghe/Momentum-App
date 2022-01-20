@@ -9,12 +9,20 @@
     <script defer src="/js/greeting.js"></script>
     <script defer src="/js/clock.js"></script>
     <script defer src="/js/changeBG.js"></script>
+    <script defer src="js/weather.js"></script>
 </head>
 <body>
     <img src="https:/placeimg.com/640/480/nature" class="img"/>
 
     <div class="header">
-        <p class="header_changeBG">change <br />background</p>
+        <div class="header_changeBG">
+            <p>change <br />background</p>
+        </div>
+        <div class="header_weather">
+            <div id="location"></div>
+            <div id="temperature"></div>
+            <div id="condition"></div>
+        </div>
     </div>
 
     <form class="hide" id="login-form">
