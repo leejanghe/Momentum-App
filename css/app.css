@@ -44,19 +44,28 @@
 }
 
 .blank{
-    flex-grow: 8.5;
+    flex-grow: 8;
 }
 
 .header_weather{
-    flex-grow: .5;
+    flex-grow: .7;
 }
 
 .header_todo{
     cursor : pointer;
-    flex-grow: .5;
+    flex-grow: .7;
 }
 
 .header_todo:active{
+    transform: scale(.9);
+}
+
+.header_reset{
+    cursor : pointer;
+    flex-grow: .7;
+}
+
+.header_reset:active{
     transform: scale(.9);
 }
 
