@@ -15,9 +15,21 @@ function saveToDos(){
 
 function deleteToDo(event){
     const li = event.target.parentElement;
-    li.remove()
     todoList = todoList.filter((toDo) => toDo.id !== parseInt(li.id))
+    li.remove();
     saveToDos();
+}
+
+function checkToDo(event){
+    const li = event.target.parentElement;
+    todoList = todoList.filter((toDo) => toDo.id !== parseInt(li.id))
+    if(li.style.textDecoration === ''){
+        li.style.textDecoration = 'line-through';
+        li.style.textDecorationColor = 'red';
+    }else{
+        li.style.textDecoration = '';
+        li.style.textDecorationColor = '';
+    }
 }
 
 
@@ -27,10 +39,18 @@ function paintToDo(newToDo){
     const spanTag = document.createElement('span')
     spanTag.innerText = newToDo.text;
 
+    const checkBtn = document.createElement('button')
+    checkBtn.innerText = '✔';
+    checkBtn.style.color = 'green';
+    checkBtn.addEventListener('click',checkToDo)
+    // checkBtn.innerText = "✅";
+
     const button = document.createElement('button')
     button.addEventListener('click', deleteToDo)
     button.innerText =  "❌";
+
     liTag.appendChild(spanTag);
+    liTag.appendChild(checkBtn);
     liTag.appendChild(button);
     toDoList.appendChild(liTag);
 }
@@ -38,16 +58,21 @@ function paintToDo(newToDo){
 
 function handleTodoSubmit(event){
     event.preventDefault();
-    console.log(toDoInput.value)
-    const todoText = toDoInput.value;
-    toDoInput.value = '';
-    const newToDoObj ={
-        id: Date.now(),
-        text: todoText,
+    // console.log(toDoInput.value)
+    if(toDoInput.value.length === 0){
+        alert('할 일을 적어주세요!')
+    }else{
+        const todoText = toDoInput.value;
+        toDoInput.value = '';
+        const newToDoObj ={
+            id: Date.now(),
+            text: todoText,
+        }
+        todoList.push(newToDoObj)
+        paintToDo(newToDoObj);
+        saveToDos();
     }
-    todoList.push(newToDoObj)
-    paintToDo(newToDoObj);
-    saveToDos();
+    
 }
 
 toDoForm.addEventListener('submit',handleTodoSubmit);
