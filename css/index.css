@@ -233,6 +233,9 @@ footer{
     top: 18%;
     left: 5%;
   }
+.main_todo::-webkit-scrollbar{
+    display: none;
+}
 
   #todo-form button{
     all: unset;
